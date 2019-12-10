@@ -1,15 +1,24 @@
 public class Main {
     public static void main(String[] args) {
-        Duck rubberDuck = new RubberDuck();
+        // real Duck
         Duck realDuck = new RealDuck();
-        // Rubber duck
-        rubberDuck.display();
-        rubberDuck.iFly.fly();
-        rubberDuck.iQuack.quack();
-        // Real duck
         realDuck.display();
-        realDuck.iFly.fly();
-        realDuck.iQuack.quack();
+        realDuck.performFly();
+        realDuck.performQuack();
 
+        System.out.println("*****************************");
+        Duck rubberDuck = new RubberDuck();
+        realDuck.display();
+        realDuck.performFly();
+        realDuck.performQuack();
+
+        // change behaviour in runtime then use below.
+        System.out.println("*****************************");
+        ((RubberDuck) rubberDuck).setFlyBehaviour(new FlyWithRocket());
+        rubberDuck.performFly();
+        System.out.println("No rocket Fuel!");
+        ((RubberDuck) rubberDuck).setFlyBehaviour(new NoFly());
+        rubberDuck.performFly();
+        rubberDuck.performFly();
     }
 }

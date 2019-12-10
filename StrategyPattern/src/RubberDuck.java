@@ -1,7 +1,15 @@
 public class RubberDuck extends Duck {
     public RubberDuck(){
-        iFly = new NoFly();
-        iQuack = new Sqeak();
+        flyBehaviour = new NoFly();
+        quackBehaviour = new Sqeak();
+    }
+
+    public void setFlyBehaviour(IFlyable fb){
+        flyBehaviour = fb;
+    }
+
+    public void setQuackBehaviour(IQuackable qb){
+        quackBehaviour = qb;
     }
 
     @Override
