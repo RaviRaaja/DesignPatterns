@@ -14,10 +14,10 @@ public class Main {
 
         // change behaviour in runtime then use below.
         System.out.println("*****************************");
-        ((RubberDuck) rubberDuck).setFlyBehaviour(new FlyWithRocket());
+        rubberDuck.setFlyBehaviour(new FlyWithRocket());
         rubberDuck.performFly();
         System.out.println("No rocket Fuel!");
-        ((RubberDuck) rubberDuck).setFlyBehaviour(new NoFly());
+        rubberDuck.setFlyBehaviour(new NoFly());
         rubberDuck.performFly();
         rubberDuck.performFly();
     }
