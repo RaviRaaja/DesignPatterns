@@ -2,22 +2,27 @@ public class Main {
     public static void main(String[] args) {
         // real Duck
         Duck realDuck = new RealDuck();
-        realDuck.display();
-        realDuck.performFly();
-        realDuck.performQuack();
+        helperMethod(realDuck);
 
         System.out.println("*****************************");
         Duck rubberDuck = new RubberDuck();
-        rubberDuck.display();
-        rubberDuck.performFly();
-        rubberDuck.performQuack();
-
-        // change behaviour in runtime then use below.
-        System.out.println("*****************************");
         rubberDuck.setFlyBehaviour(new FlyWithRocket());
-        rubberDuck.performFly();
-        System.out.println("No rocket Fuel!");
-        rubberDuck.setFlyBehaviour(new NoFly());
-        rubberDuck.performFly();
+        rubberDuck.setQuackBehaviour(new Sqeak());
+        helperMethod(rubberDuck);
+
+        // we have added new sub Duck class -  new requirement Wooden duck
+        // we have not touched Duck class
+        // we have added new behavior (Noquack) without touching any other interfaces or classes.
+        System.out.println("*****************************");
+        Duck woodenDuck = new WoodenDuck();
+        woodenDuck.setQuackBehaviour(new NoQuack());
+        woodenDuck.setFlyBehaviour(new NoFly());
+        helperMethod(woodenDuck);
+    }
+
+    public static void helperMethod(Duck d) {
+        d.display();
+        d.performFly();
+        d.performQuack();
     }
 }

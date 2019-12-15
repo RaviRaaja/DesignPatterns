@@ -25,6 +25,4 @@ public abstract class Duck {
         quackBehaviour = qb;
     }
 
-
-
 }

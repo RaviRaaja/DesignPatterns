@@ -1,7 +1,9 @@
 public class RubberDuck extends Duck {
+
     public RubberDuck(){
-        flyBehaviour = new NoFly();
-        quackBehaviour = new Sqeak();
+        // we dont want this instantiation we can setbehaviours dynamically
+        //  flyBehaviour = new NoFly();
+        //  quackBehaviour = new Sqeak();
     }
 
     @Override
