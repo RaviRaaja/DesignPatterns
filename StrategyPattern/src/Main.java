@@ -8,9 +8,9 @@ public class Main {
 
         System.out.println("*****************************");
         Duck rubberDuck = new RubberDuck();
-        realDuck.display();
-        realDuck.performFly();
-        realDuck.performQuack();
+        rubberDuck.display();
+        rubberDuck.performFly();
+        rubberDuck.performQuack();
 
         // change behaviour in runtime then use below.
         System.out.println("*****************************");
@@ -18,7 +18,6 @@ public class Main {
         rubberDuck.performFly();
         System.out.println("No rocket Fuel!");
         rubberDuck.setFlyBehaviour(new NoFly());
-        rubberDuck.performFly();
         rubberDuck.performFly();
     }
 }
