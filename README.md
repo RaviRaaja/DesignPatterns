@@ -12,6 +12,6 @@ clients that use it.
   don't.</p>
 </details>
 <details>
-  <summary>Program to Interface, not Implementaion</summary>
+  <summary>Rule 2: Program to Interface, not Implementaion</summary>
   <p>Here Interface is not Java interface, it is Super type of some entity. (Use of polymorphism - we no need to mention the type of objects)</p>
 </details>
