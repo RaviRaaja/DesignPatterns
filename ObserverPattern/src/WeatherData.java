@@ -9,7 +9,7 @@ public class WeatherData implements Subject {
     double pressure;
 
     WeatherData() {
-        this.observerArr = new ArrayList();
+        this.observerArr = new ArrayList<>();
     }
 
     public void register(Observer o) {
