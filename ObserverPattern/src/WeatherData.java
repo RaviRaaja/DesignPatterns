@@ -11,7 +11,7 @@ public class WeatherData implements Subject {
     WeatherData() {
         this.observerArr = new ArrayList<>();
     }
-
+    @Override
     public void register(Observer o) {
         this.observerArr.add(o);
     }
@@ -23,8 +23,12 @@ public class WeatherData implements Subject {
 
     @Override
     public void notifyAllDisplays() {
-        for (Observer t: observerArr) {
-            Observer customDisplay = observerArr.get(observerArr.indexOf(t));
+        // basic looping
+        // for (int t=0; t<observerArr.size(); t++){
+        //    Observer cd = observerArr.get(t);
+        //    cd.update(temperature,pressure);
+        // }
+        for (Observer customDisplay: observerArr) {
             customDisplay.update(temperature, pressure);
         }
     }
